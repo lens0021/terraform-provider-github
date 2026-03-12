@@ -29,22 +29,22 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # Allow goreleaser to access older tag information.
           fetch-depth: 0
 
       - name: Set-up Go
-        uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
+        uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6.3.0
         with:
           go-version-file: go.mod
           cache: true
 
       - name: Install Syft
-        uses: anchore/sbom-action/download-syft@0b82b0b1a22399a1c542d4d656f70cd903571b5c # v0.21.1
+        uses: anchore/sbom-action/download-syft@57aae528053a48a3f6235f2d9461b05fbcb7366d # v0.23.1
 
       - name: Install Cosign
-        uses: sigstore/cosign-installer@faadad0cce49287aee09b3a48701e75088a2c6ad # v4.0.0
+        uses: sigstore/cosign-installer@ba7bc0a3fef59531c69a25acd34668d6d3fe6f22 # v4.1.0
 
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec # v6.3.0
